@@ -64,6 +64,13 @@ footer {
     padding: 5px 20px;
     }
 
+form {
+    display: fixed;
+    flex-direction: vertical;
+    max-width: 900px;
+    margin: 20px 0;
+    }
+
 a[href^="mailto:"] {
     color: #ff6347;
     text-decoration: none;
