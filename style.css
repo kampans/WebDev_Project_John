@@ -55,7 +55,7 @@ main {
     justify-content: left;
     margin-top: 20px;
     align-items: stretch;
-}
+    }
 
 .card {
     max-width: 300px;
@@ -68,25 +68,25 @@ main {
     flex-direction: column;
     flex: 1; /* allows the card to grow and fill the available space */
     padding: 0;
-}
+    }
 
 .card a {
   text-decoration: none
-}
+    }
 
 .content {
     display: flex;
     flex-direction: column;
     flex: 1;              /* makes .content fill the space under the image */
     padding: 1.1rem;
-}
+    }
 
 .image {
     height: 150px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    }
 
 .image img {
     display: block;
@@ -98,14 +98,14 @@ main {
     max-width: none;
     object-fit: cover;
     object-position: center 25%;
-}
+    }
 
 .title {
     color: #111827;
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 600;
-}
+    }
 
 .desc {
     margin-top: 0.5rem;
@@ -113,7 +113,7 @@ main {
     font-size: 0.875rem;
     line-height: 1.25rem;
     margin-bottom: 1rem;
-}
+    }
 
 .action {
     display: inline-flex;
@@ -127,15 +127,15 @@ main {
     padding: 4px 8px;
     border-radius: 4px;
     align-self: flex-start;
-}
+    }
 
 .action span {
     transition: .3s ease;
-}
+    }
 
 .action:hover span {
     transform: translateX(4px);
-}
+    }
 
 
 img {
@@ -165,11 +165,57 @@ footer {
     margin: 0;
     }
 
-form {
-    display: fixed;
-    flex-direction: vertical;
-    max-width: 900px;
-    margin: 20px 0;
+.contact-layout {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    }
+
+.contact-form {
+    flex: 2;
+    max-width: 500px;
+    background-color: #ecebeb;
+    padding: 20px;
+    border-radius: 10px;
+    
+    }
+
+.contact-form label {
+    color: #333;
+    }
+
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    }
+
+.contact-form label {
+    margin-bottom: 10px;
+    }
+
+textarea {
+    resize: none;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    }
+
+.contact-form button[type="submit"] {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
     }
 
 a[href^="mailto:"] {
@@ -185,7 +231,7 @@ a[href^="mailto:"]:hover {
 .cardlink {
   display: flex;
   gap: 8px;
-}
+    }
 
 .cardlink .social-link1,
 .cardlink .social-link2 {
@@ -198,21 +244,21 @@ a[href^="mailto:"]:hover {
   text-decoration: none;
   transition: 0.25s;
   border-radius: 50%;
-}
+    }
 
 .cardlink svg {
   width: 60%;
   height: 60%;
   cursor: pointer;
-}
+    }
 
 .cardlink .social-link1:hover {
   background-color: #1a1e22;
   animation: bounce_613 0.4s linear;
-}
+    }
 
 .cardlink .social-link2:hover {
   background-color: #0a66c2;
   animation: bounce_613 0.4s linear;
-}
+    }
 
