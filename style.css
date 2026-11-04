@@ -54,7 +54,7 @@ main {
     flex: 1; /* This allows the main content to take up available space */
     }
 
-.cards {
+.cards[card] {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
