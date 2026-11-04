@@ -1,4 +1,10 @@
 
+/*body {
+  font-family: 'Tangerine', serif;
+  font-size: 48px; // This is calling google api fonts, its a god awful font so dont use it 
+  text-shadow: 4px 4px 4px #aaa;
+}*/ 
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
