@@ -5,16 +5,34 @@
   text-shadow: 4px 4px 4px #aaa;
 }*/ 
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+main h1,
+main h2,
+main p,
+main details {
+    background-color: #ffffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #f5f5f5;
     color: #222;
     line-height: 1.6;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center; 
     display: flex; /* This makes the body a flex container */
     flex-direction: column; /* This stacks the children vertically */
     min-height: 100vh; /* This ensures the body takes at least the full height of the viewport */
     }
+
 
 header {
     background-color: #333;
@@ -54,7 +72,15 @@ main {
     flex: 1; /* This allows the main content to take up available space */
     }
 
-.cards[card] {
+.image {
+    overflow: hidden;
+}
+
+.card:first-child .image img {
+    transform: scale(1.03);
+} /* For the first card, scale the image bigger to make it fit */
+
+.cards {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
@@ -142,6 +168,14 @@ main {
 .action:hover span {
     transform: translateX(4px);
     }
+
+.card h1, .card h2, .card p,
+.contact-form p {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    width: auto;
+}
 
 
 img {
