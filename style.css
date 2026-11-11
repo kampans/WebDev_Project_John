@@ -14,9 +14,11 @@ main h2,
 main p,
 main details {
     background-color: #ffffffff;
+    border: 2px solid #333;
     padding: 10px 20px;
     border-radius: 10px;
     width: fit-content;
+    font-size: 1.5rem;
 }
 
 body {
@@ -47,7 +49,7 @@ header {
     }
 
 nav {
-    padding: 0;
+    padding: 22px;
     }
 
 nav a {
@@ -55,6 +57,7 @@ nav a {
     text-decoration: none;
     margin-right: 15px;
     font-weight: bold;
+    font-size: 1.2rem;
     }
 
 nav a:hover {
@@ -91,6 +94,7 @@ main {
 
 .card {
     max-width: 300px;
+    border: 2px solid #333;
     border-radius: 0.5rem;
     overflow: hidden;
     padding: 0;
@@ -132,9 +136,10 @@ main {
     object-position: center 25%;
     }
 
-.title {
+.card .title {
+    margin: 0;
     color: #111827;
-    font-size: 1.125rem;
+    font-size: 1.75rem;
     line-height: 1.75rem;
     font-weight: 600;
     }
@@ -142,7 +147,7 @@ main {
 .desc {
     margin-top: 0.5rem;
     color: #6B7280;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     line-height: 1.25rem;
     margin-bottom: 1rem;
     }
@@ -151,7 +156,7 @@ main {
     display: inline-flex;
     margin-top: auto;
     color: #ffffff;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 500;
     gap: 0.25rem;
@@ -172,6 +177,7 @@ main {
 .card h1, .card h2, .card p,
 .contact-form p {
     background-color: transparent;
+    border: none;
     padding: 0;
     border-radius: 0;
     width: auto;
@@ -193,6 +199,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
+    font-size: 1.25rem;
     }
 
 .footer-content {
@@ -213,12 +220,13 @@ footer {
 
 .contact-form {
     flex: 2;
-    max-width: none;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     background-color: #ecebeb;
     padding: 20px;
     border-radius: 10px;
+    font-size: 1.2rem;
     }
 
 
@@ -272,7 +280,7 @@ textarea {
 
 .contact-form input, .contact-form textarea {
     padding: 10px;
-    border: none;
+    border: 2px solid #333;
     border-radius: 5px;
     margin-bottom: 20px;
     }
@@ -283,7 +291,7 @@ textarea {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     margin-top: auto;
     }
@@ -332,3 +340,79 @@ a[href^="mailto:"]:hover {
   animation: bounce_613 0.4s linear;
     }
 
+/* Mobile default (single column) */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem; /* prevents text from touching screen edges */
+}
+
+/* Expand on desktop */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  nav a {
+    margin-right: 0;
+  }
+
+  main {
+    margin: 20px 0;
+    padding: 0 12px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  main div[style*="margin-left"] {
+    margin-left: 0 !important;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  footer,
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  footer {
+    padding: 16px 12px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Expand on desktop */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    padding: 0 2rem;
+  }
+}
