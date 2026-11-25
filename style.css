@@ -552,3 +552,40 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.home-footer {
+    display: block;
+    padding: 1.75rem 0;
+    background: #181f29;
+}
+
+.home-footer-content,
+.home-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+}
+
+.home-footer-content {
+    justify-content: space-between;
+}
+
+.home-footer p,
+.home-footer ul {
+    margin: 0;
+}
+
+.home-footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.home-footer a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+}
+
+.home-footer a:hover {
+    color: #ffb4a5;
+}
