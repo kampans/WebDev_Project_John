@@ -36,7 +36,8 @@ body {
 
 header,
 footer {
-	background-color: #333;
+	--bar-accent: #ffdab3;
+	background: linear-gradient(110deg, #263441, #3d3532);
 	display: flex;
 	align-items: center;
 	min-height: 60px;
@@ -77,7 +78,7 @@ nav a {
 }
 
 nav a:hover {
-	color: #ff6347;
+	color: var(--bar-accent);
 	transform: scale(1.1);
 }
 
@@ -85,7 +86,7 @@ nav a:hover {
 	grid-column: 3;
 	justify-self: end;
 	padding: 0.45rem 0.8rem;
-	border: 1px solid #ffb4a5;
+	border: 1px solid var(--bar-accent);
 	border-radius: 0.25rem;
 	background: transparent;
 	color: #fff;
@@ -95,13 +96,13 @@ nav a:hover {
 }
 
 .accessibility-toggle:hover {
-	background: #4d302b;
+	background: #50443d;
 }
 
 .accessibility-toggle[aria-pressed="true"] {
-	border-color: #fce8e3;
-	background: #fce8e3;
-	color: #8e2415;
+	border-color: var(--bar-accent);
+	background: var(--bar-accent);
+	color: #3d3532;
 }
 
 .accessibility-toggle:focus-visible,
@@ -166,10 +167,6 @@ footer {
 
 .footer-content p {
 	margin: 0;
-}
-
-.contact-page footer a[href^="mailto:"] {
-	color: #ffb4a5;
 }
 
 .contact-layout {
@@ -283,8 +280,8 @@ footer {
 	font-size: 20px;
 }
 
-a[href^="mailto:"] {
-	color: #ff6347;
+footer a[href^="mailto:"] {
+	color: var(--bar-accent);
 	text-decoration: none;
 }
 
