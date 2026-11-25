@@ -469,6 +469,10 @@ a[href^="mailto:"]:hover {
 	object-position: center 25%;
 }
 
+.image img.miata-photo {
+	object-position: center 63%;
+}
+
 .card .title {
 	margin: 0;
 	color: #111827;
