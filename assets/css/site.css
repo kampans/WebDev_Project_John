@@ -580,3 +580,8 @@ a[href^="mailto:"]:hover {
 		min-width: 0;
 	}
 }
+
+.miata-article {
+	width: min(100% - 2rem, 72ch);
+	margin-inline: auto;
+}
