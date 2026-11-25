@@ -107,17 +107,26 @@ nav a:hover {
 	box-shadow: 0 0 0 3px #fff;
 }
 
-.accessibility-mode :is(nav a, .card, .action, .action span, .cardlink a) {
+.accessibility-mode :is(nav a, .card, .cardlink a) {
 	transition: none;
 }
 
-.accessibility-mode :is(nav a, .card, .action, .action span, .cardlink a):hover {
+.accessibility-mode :is(nav a, .card, .cardlink a):hover {
 	animation: none;
 	transform: none;
 }
 
+.hero-button,
+.action,
+.contact-form button[type="submit"] {
+	transition: background-color 200ms ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
-	nav a {
+	nav a,
+	.hero-button,
+	.action,
+	.contact-form button[type="submit"] {
 		transition: none;
 	}
 }
@@ -205,7 +214,6 @@ textarea {
 	font-size: 16px;
 	cursor: pointer;
 	margin-top: auto;
-	transition: background-color 200ms ease;
 }
 
 .contact-form button[type="submit"]:hover,
@@ -372,8 +380,9 @@ a[href^="mailto:"]:hover {
 	text-decoration: none;
 }
 
-.hero-button:hover {
-	background: #9f2818;
+.hero-button:hover,
+.hero-button:focus-visible {
+	background-color: #9f2818;
 }
 
 .hero-button:focus-visible {
@@ -499,19 +508,9 @@ a[href^="mailto:"]:hover {
 	align-self: flex-start;
 }
 
-.action span {
-	transition: .3s ease;
-}
-
-.action:hover span {
-	transform: translateX(4px);
-}
-
-.action:hover {
-	transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
-	box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
-	transition: all .4s ease; /* zoom in */
-	cursor: pointer;
+.action:hover,
+.action:focus-visible {
+	background-color: #b93822;
 }
 
 .card h2, .card p {
@@ -564,7 +563,7 @@ a[href^="mailto:"]:hover {
 	background-color: #bd3420;
 }
 
-.accessibility-mode :is(.action, .contact-form button[type="submit"]):hover {
+.accessibility-mode :is(.action, .contact-form button[type="submit"]):is(:hover, :focus-visible) {
 	background-color: #9f2818;
 }
 
