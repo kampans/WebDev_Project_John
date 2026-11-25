@@ -5,13 +5,14 @@
 	<head>
 		<link rel="stylesheet" href="assets/css/site.css">
 		<script src="assets/js/accessibility.js" defer></script>
+		<script src="assets/js/contact.js" defer></script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Rider's Republic</title> <!-- This is a title bar -->
+		<title>Contact | Rider's Republic</title>
 
 	</head>
 
-	<body>
+	<body class="contact-page">
 
 		<header>
 
@@ -25,27 +26,37 @@
 
 		</header>
 
-		<main>
+		<main class="page-width contact-layout">
+			<section class="contact-intro" aria-labelledby="contact-title">
+				<h1 id="contact-title">Contact</h1>
+				<p>Pitch a story, share a wrenching disaster, or send a general question.</p>
+				<p>Project builds, garage fixes and lessons learned the hard way are all welcome.</p>
+				<p><a href="mailto:nikolas.kampans@gmail.com">nikolas.kampans@gmail.com</a></p>
+			</section>
 
-			<h1>Contact </h1>
+			<div class="contact-form">
+				<form action="mailto:nikolas.kampans@gmail.com" method="post" enctype="text/plain" aria-describedby="contact-hint">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
 
-			<p>Contact for submission or general queries</p>
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
 
-			<div class="contact-layout">
-				<div class="contact-form">
-					<form>
-						<label for="name">Name:</label>
-						<input type="text" id="name" name="name" required="">
-						<label for="email">Email:</label>
-						<input type="email" id="email" name="email" required="">
-						<label for="message">Message:</label>
-						<textarea id="message" name="message" required=""></textarea>
-						<button type="submit">Submit</button>
-					</form>
-				</div>
+					<label for="topic">Topic</label>
+					<select id="topic" name="topic" required>
+						<option value="">Choose a topic</option>
+						<option>Submission</option>
+						<option>General question</option>
+					</select>
 
+					<label for="message">Message</label>
+					<textarea id="message" name="message" placeholder="Tell us about your build, story, or question" required></textarea>
+
+					<small id="contact-hint">This opens a draft in your email app.</small>
+					<button type="submit">Send message</button>
+					<div class="contact-status" role="status"></div>
+				</form>
 			</div>
-
 		</main>
 		<footer>
 			<div class="footer-content">
