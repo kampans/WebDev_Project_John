@@ -637,16 +637,128 @@ a[href^="mailto:"]:hover {
 	margin: 0 0 0.5rem;
 }
 
-.accessibility-mode main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *) {
+.about-main {
+	width: min(100%, 44rem);
+	margin-inline: auto;
+	padding-block: clamp(1rem, 4vw, 3rem);
+}
+
+.about-main :is(h1, p) {
+	width: auto;
+	padding: 0;
+	background: transparent;
+}
+
+.about-main h1 {
+	margin: 0 0 1rem;
+	font-size: clamp(2.5rem, 6vw, 4rem);
+	line-height: 1.05;
+}
+
+.about-main p {
+	margin: 0 0 1rem;
+}
+
+.about-main a {
+	color: #962817;
+	font-weight: 700;
+	text-underline-offset: 0.18em;
+}
+
+.about-main a:hover {
+	color: #bd3420;
+}
+
+.about-bio,
+.about-history {
+	border: 1px solid #b8a49e;
+	border-radius: 10px;
+	background: #fff;
+}
+
+.about-bio {
+	display: grid;
+	grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+	align-items: center;
+	gap: 1.25rem;
+	padding: clamp(1rem, 3vw, 1.75rem);
+}
+
+.about-bio p:last-child {
+	margin-bottom: 0;
+}
+
+.about-bio img {
+	width: 100%;
+	margin: 0;
+	border-radius: 0.5rem;
+}
+
+@media (max-width: 560px) {
+	.about-bio {
+		grid-template-columns: 1fr;
+	}
+}
+
+.about-history {
+	width: auto;
+	margin-block: 1.5rem;
+	padding: 0;
+}
+
+.about-history summary {
+	padding: 0.85rem 1rem;
+	color: #962817;
+	border-radius: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.about-history summary:hover {
+	background: #fce8e3;
+}
+
+.about-history-content {
+	padding: 0 1rem 1rem;
+}
+
+.about-history ul {
+	margin: 0 0 1rem;
+	padding-inline-start: 1.5rem;
+}
+
+.about-history figure {
+	margin: 0;
+}
+
+.about-history img {
+	margin: 0 0 0.5rem;
+	border-radius: 0.5rem;
+}
+
+@keyframes about-history-reveal {
+	from {
+		opacity: 0;
+		transform: translateY(-0.25rem);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root:not(.accessibility-mode) .about-history[open] .about-history-content {
+		animation: about-history-reveal 180ms ease-out;
+	}
+}
+
+.accessibility-mode main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, .about-main *) {
 	box-shadow: inset 0 0 0 1px #b8a49e;
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-	:is(.card, .contact-form, .contact-intro, .article-photo, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *)) {
+	:is(.card, .contact-form, .contact-intro, .article-photo, .about-bio, .about-history, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *, .about-main *)) {
 		transition: transform 160ms ease;
 	}
 
-	:is(.card, .contact-form, .contact-intro, .article-photo, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *)):hover {
+	:is(.card, .contact-form, .contact-intro, .article-photo, .about-bio, .about-history, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *, .about-main *)):hover {
 		transform: translateY(-1px) scale(1.008);
 	}
 }

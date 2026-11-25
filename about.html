@@ -7,7 +7,7 @@
 		<script src="assets/js/accessibility.js" defer></script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Rider's Republic</title> <!-- This is a title bar -->
+		<title>About | Rider's Republic</title>
 
 	</head>
 
@@ -22,29 +22,31 @@
 			<button type="button" class="accessibility-toggle" aria-pressed="false" hidden>Accessibility mode</button>
 		</header>
 
-		<main>
-			<div style="margin-left: 12px;"><h1>About me </h1></div>
-			<div style="margin-left: 24px;">
+		<main class="about-main">
+			<section class="about-bio" aria-labelledby="about-title">
+				<div>
+					<h1 id="about-title">About me</h1>
+					<p>My name is John, and this is my hobbyist site.</p>
+					<p>I have loved cars from a young age, often sneaking into my father's garage to drink the delicious oil straight from the oilpan, he thought he was plagued with oil leaks but it was me the whole time</p>
+				</div>
+				<img src="assets/images/mechanic.webp" width="600" height="400" alt="John working as a mechanic">
+			</section>
 
-				<p>My name is John, and this is my hobbyist site.</p>
-				<p>I have loved cars from a young age, often sneaking into my fathers garage to tune his Mk4 Golf. I was five years old and to this day doesn't know why his Golf blew up.</p>
-			</div>
+			<details class="about-history">
+				<summary>My tragic accident history</summary>
+				<div class="about-history-content">
+					<ul>
+						<li>The original Mk4 Golf mystery</li>
+						<li>Hit by <strong>a bus</strong></li>
+					</ul>
+					<figure>
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt1eAgM1-S58TjwKZP9yR2kpPpowfa6rxckI3tv06Jxjh1_DZWYsxsYqIr&amp;s=10" alt="Route 41 bus">
+						<figcaption><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt1eAgM1-S58TjwKZP9yR2kpPpowfa6rxckI3tv06Jxjh1_DZWYsxsYqIr&amp;s=10">The route 41 bus</a> that hit me.</figcaption>
+					</figure>
+				</div>
+			</details>
 
-			<div style="margin-left: 36px;">
-				<details>
-
-					<summary>My tragic accident history</summary>
-
-					<div style="margin-left: 24px;">
-
-						<p>The original Mk4 Golf mystery </p>
-						<p>Hit by <b>a bus</b>, specifically this <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt1eAgM1-S58TjwKZP9yR2kpPpowfa6rxckI3tv06Jxjh1_DZWYsxsYqIr&s=10">photo of the route 41 bus</a></p>
-						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt1eAgM1-S58TjwKZP9yR2kpPpowfa6rxckI3tv06Jxjh1_DZWYsxsYqIr&s=10" alt="Route 41 bus">
-
-					</div>
-
-				</details>
-			</div>
+			<p>Have a car disaster of your own? <a href="contact.html">Send it in</a>.</p>
 		</main>
 
 		<footer>
