@@ -14,10 +14,13 @@ main h2,
 main p,
 main details {
     background-color: #ffffffff;
-    border: 2px solid #333;
     padding: 10px 20px;
     border-radius: 10px;
     width: fit-content;
+}
+
+.accessibility-mode main :where(h1, h2, p, details) {
+    border: 2px solid #333;
     font-size: 1.5rem;
 }
 
@@ -36,30 +39,32 @@ body {
     }
 
 
-header {
+header,
+footer {
     background-color: #333;
     display: flex;
     align-items: center;
-    padding: 5px 15px;
-    }
+    min-height: 60px;
+    padding: 5px 20px;
+}
 
 .logo {
-    height: 50px;
+    height: 44px;
     margin: 0 30px 0 0;
     }
 
 nav {
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
+    align-items: center;
     gap: 15px;
-    padding: 22px;
     }
 
 nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem;
     transition: transform 160ms ease;
     }
 
@@ -67,6 +72,27 @@ nav a:hover {
     color: #ff6347;
     transform: scale(1.1);
     }
+
+.accessibility-toggle {
+    margin-left: auto;
+    padding: 6px 12px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.accessibility-toggle[aria-pressed="true"] {
+    background: #fff;
+    color: #333;
+}
+
+.accessibility-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
 
 @media (prefers-reduced-motion: reduce) {
     nav a {
@@ -104,7 +130,6 @@ main {
 
 .card {
     max-width: 300px;
-    border: 2px solid #333;
     border-radius: 0.5rem;
     overflow: hidden;
     padding: 0;
@@ -166,7 +191,7 @@ main {
 .card .title {
     margin: 0;
     color: #111827;
-    font-size: 1.75rem;
+    font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 600;
     }
@@ -174,7 +199,7 @@ main {
 .desc {
     margin-top: 0.5rem;
     color: #6B7280;
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
     margin-bottom: 1rem;
     }
@@ -183,7 +208,7 @@ main {
     display: inline-flex;
     margin-top: auto;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 500;
     gap: 0.25rem;
@@ -226,14 +251,9 @@ img {
     }
 
 footer {
-    background-color: #333;
     color: #fff;
     text-align: left;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    font-size: 1.25rem;
     }
 
 .footer-content {
@@ -260,7 +280,6 @@ footer {
     background-color: #ecebeb;
     padding: 20px;
     border-radius: 10px;
-    font-size: 1.2rem;
     }
 
 
@@ -314,7 +333,7 @@ textarea {
 
 .contact-form input, .contact-form textarea {
     padding: 10px;
-    border: 2px solid #333;
+    border: 1px solid #767676;
     border-radius: 5px;
     margin-bottom: 20px;
     }
@@ -325,7 +344,7 @@ textarea {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     margin-top: auto;
     transition: background-color 200ms ease;
@@ -335,6 +354,36 @@ textarea {
 .contact-form button[type="submit"]:focus-visible {
     background-color: #b93822;
     }
+
+.accessibility-mode nav a,
+.accessibility-mode .contact-form {
+    font-size: 1.2rem;
+}
+
+.accessibility-mode .card,
+.accessibility-mode .contact-form :is(input, textarea) {
+    border: 2px solid #333;
+}
+
+.accessibility-mode .card .title {
+    font-size: 1.75rem;
+}
+
+.accessibility-mode .card .desc {
+    font-size: 1.125rem;
+}
+
+.accessibility-mode .action {
+    font-size: 1rem;
+}
+
+.accessibility-mode footer {
+    font-size: 1.25rem;
+}
+
+.accessibility-mode .contact-form button[type="submit"] {
+    font-size: 20px;
+}
 
 a[href^="mailto:"] {
     color: #ff6347;
@@ -395,15 +444,16 @@ header {
 }
 
 .logo {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 
 nav { 
     display: flex; 
+    width: 100%;
     justify-content: center; 
     gap: 12px; 
-    padding: 12px 0; 
+    padding: 6px 0;
 } /*flexbox*/
 
 main {
