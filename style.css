@@ -60,11 +60,19 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
+    transition: transform 160ms ease;
     }
 
 nav a:hover {
     color: #ff6347;
+    transform: scale(1.1);
     }
+
+@media (prefers-reduced-motion: reduce) {
+    nav a {
+        transition: none;
+    }
+}
  
 h1, h2 {
     color: #333;
@@ -390,10 +398,12 @@ header {
     margin: 10px 0;
 }
 
+
 nav { 
-    justify-content: center;
-    gap: 12px;
-    padding: 12px 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+    padding: 12px 0; 
 } /*flexbox*/
 
 main {
