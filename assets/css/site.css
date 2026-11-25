@@ -156,13 +156,32 @@ img {
 footer {
 	color: #fff;
 	text-align: left;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 24%) minmax(0, 1fr);
+	column-gap: 1rem;
+}
+
+.footer-commit {
+	grid-column: 2;
+	margin: 0;
+	color: #a7a09c;
+	font-size: 0.8125em;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+
+.footer-commit:is(:hover, :focus-visible) {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
 }
 
 .footer-content {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
-	gap: 24px;
+	gap: 0.25rem 24px;
+	overflow-wrap: anywhere;
 }
 
 .footer-content p {
@@ -292,6 +311,8 @@ a[href^="mailto:"]:hover {
 /* From Uiverse.io by ahmed150up2 */
 .cardlink {
 	display: flex;
+	grid-column: 3;
+	justify-self: end;
 	gap: 8px;
 }
 
@@ -304,7 +325,6 @@ a[href^="mailto:"]:hover {
 	height: 50px;
 	color: whitesmoke;
 	text-decoration: none;
-	transition: 0.25s;
 	border-radius: 50%;
 }
 
@@ -320,6 +340,16 @@ a[href^="mailto:"]:hover {
 
 .cardlink .social-link2:hover {
 	background-color: #0a66c2;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+	:root:not(.accessibility-mode) footer :is(.footer-content p, .footer-commit, .cardlink a) {
+		transition: transform 160ms ease, background-color 160ms ease;
+	}
+
+	:root:not(.accessibility-mode) footer :is(.footer-content p, .footer-commit, .cardlink a):hover {
+		transform: scale(1.05);
+	}
 }
 
 @media (max-width: 767px) {
@@ -367,8 +397,13 @@ a[href^="mailto:"]:hover {
 	}
 
 	footer {
+		display: flex;
 		padding: 16px 12px;
 		overflow-wrap: anywhere;
+	}
+
+	.footer-commit {
+		align-self: center;
 	}
 }
 
@@ -670,7 +705,7 @@ a[href^="mailto:"]:hover {
 }
 
 .about-bio,
-.about-history {
+.about-disclosure {
 	border: 1px solid #b8a49e;
 	border-radius: 10px;
 	background: #fff;
@@ -700,13 +735,13 @@ a[href^="mailto:"]:hover {
 	}
 }
 
-.about-history {
+.about-disclosure {
 	width: auto;
 	margin-block: 1.5rem;
 	padding: 0;
 }
 
-.about-history summary {
+.about-disclosure summary {
 	padding: 0.85rem 1rem;
 	color: #962817;
 	border-radius: inherit;
@@ -714,29 +749,29 @@ a[href^="mailto:"]:hover {
 	cursor: pointer;
 }
 
-.about-history summary:hover {
-	background: #fce8e3;
-}
-
-.about-history-content {
+.about-disclosure-content {
 	padding: 0 1rem 1rem;
 }
 
-.about-history ul {
+.about-disclosure ul {
 	margin: 0 0 1rem;
 	padding-inline-start: 1.5rem;
 }
 
-.about-history figure {
+.about-disclosure figure {
 	margin: 0;
 }
 
-.about-history img {
+.about-disclosure img {
 	margin: 0 0 0.5rem;
 	border-radius: 0.5rem;
 }
 
-@keyframes about-history-reveal {
+.wd40-photo img {
+	width: min(100%, 14rem);
+}
+
+@keyframes about-disclosure-reveal {
 	from {
 		opacity: 0;
 		transform: translateY(-0.25rem);
@@ -744,8 +779,8 @@ a[href^="mailto:"]:hover {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	:root:not(.accessibility-mode) .about-history[open] .about-history-content {
-		animation: about-history-reveal 180ms ease-out;
+	:root:not(.accessibility-mode) .about-disclosure[open] .about-disclosure-content {
+		animation: about-disclosure-reveal 180ms ease-out;
 	}
 }
 
@@ -754,11 +789,11 @@ a[href^="mailto:"]:hover {
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-	:is(.card, .contact-form, .contact-intro, .article-photo, .about-bio, .about-history, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *, .about-main *)) {
+	:is(.card, .contact-form, .contact-intro, .article-photo, .about-bio, .about-disclosure, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *, .about-main *)) {
 		transition: transform 160ms ease;
 	}
 
-	:is(.card, .contact-form, .contact-intro, .article-photo, .about-bio, .about-history, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *, .about-main *)):hover {
+	:is(.card, .contact-form, .contact-intro, .article-photo, .about-bio, .about-disclosure, main :is(h1, h2, p, details):not(.hero *, .latest > h2, .contact-intro *, .card *, details *, .about-main *)):hover {
 		transform: translateY(-1px) scale(1.008);
 	}
 }
