@@ -104,11 +104,28 @@ main {
     flex-direction: column;
     flex: 1; /* allows the card to grow and fill the available space */
     padding: 0;
+    transition: all .5s ease;
     }
 
 .card a {
-  text-decoration: none
+    text-decoration: none
     }
+
+/* CARD HOVER TASK 1*/
+.card:hover {
+    transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease; /* zoom in */
+    cursor: pointer; 
+}
+
+.card_image {
+    width: 100%; /* forces image to maintain its aspect ratio; otherwise image stretches vertically */
+}
+
+.card_text {
+    padding: 20px 13px 10px 16px;
+}
 
 .content {
     display: flex;
@@ -173,6 +190,13 @@ main {
 .action:hover span {
     transform: translateX(4px);
     }
+
+.action:hover {
+    transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease; /* zoom in */
+    cursor: pointer;
+}
 
 .card h1, .card h2, .card p,
 .contact-form p {
