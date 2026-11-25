@@ -48,9 +48,20 @@ footer {
     padding: 5px 20px;
 }
 
+header {
+    justify-content: space-between;
+    gap: 1rem 2rem;
+}
+
+nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
+
 .logo {
     height: 44px;
-    margin: 0 30px 0 0;
+    width: auto;
+    margin: 0;
     }
 
 nav {
