@@ -392,8 +392,7 @@ footer {
 }
 
 .hero h1,
-.latest h2,
-.latest h3 {
+.latest > h2 {
     font-family: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
     font-style: italic;
     font-weight: 700;
@@ -447,52 +446,141 @@ footer {
     font-size: 1.5rem;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+.image {
     overflow: hidden;
-    border: 1px solid #d6d9df;
-    border-radius: 0.75rem;
-    background: #fff;
 }
 
-.card-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    margin: 0;
-    object-fit: cover;
-}
+.card:first-child .image img {
+    transform: scale(1.03);
+} /* For the first card, scale the image bigger to make it fit */
 
-.engine-image {
-    object-position: center 25%;
-}
-
-.card-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 1.25rem;
-}
-
-.card-meta {
+.cards {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem 0.75rem;
-    margin-bottom: 0.75rem;
-    color: #505968;
-    font-size: 0.875rem;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: stretch;
+    }
+
+.card {
+    max-width: 300px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* allows the card to grow and fill the available space */
+    padding: 0;
+    transition: all .5s ease;
+    }
+
+.card a {
+    text-decoration: none
+    }
+
+/* CARD HOVER TASK 1*/
+.card:hover {
+    transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease; /* zoom in */
+    cursor: pointer;
 }
 
+.card_image {
+    width: 100%; /* forces image to maintain its aspect ratio; otherwise image stretches vertically */
+}
+
+.card_text {
+    padding: 20px 13px 10px 16px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;              /* makes .content fill the space under the image */
+    padding: 1.1rem;
+    }
+
+.image {
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+.image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    max-width: none;
+    object-fit: cover;
+    object-position: center 25%;
+    }
+
+.card .title {
+    margin: 0;
+    color: #111827;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    }
+
+.desc {
+    margin-top: 0.5rem;
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+    }
+
+.action {
+    display: inline-flex;
+    margin-top: auto;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    gap: 0.25rem;
+    background-color: #ff6347;
+    padding: 4px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+    }
+
+.action span {
+    transition: .3s ease;
+    }
+
+.action:hover span {
+    transform: translateX(4px);
+    }
+
+.action:hover {
+    transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease; /* zoom in */
+    cursor: pointer;
+}
+
+.card h2, .card p {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    width: auto;
+}
+
+
 .topic {
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
     padding: 0.15rem 0.55rem;
     border-radius: 0.25rem;
     background: #fce8e3;
@@ -500,56 +588,32 @@ footer {
     font-weight: 700;
 }
 
-.card h3 {
-    margin: 0;
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
-}
-
-.card p,
-.card details {
-    width: auto;
-    padding: 0;
-}
-
-.card p {
-    margin: 0.75rem 0 1rem;
-}
-
-.card details {
-    margin-top: auto;
-}
-
-.card details p {
-    margin-bottom: 0;
-}
-
-.card summary {
-    color: #962817;
-    font-weight: 700;
-    cursor: pointer;
-}
-
 .accessibility-mode .card {
     border: 2px solid #333;
 }
 
-.accessibility-mode .card :is(p, details) {
-    padding: 0.4rem;
+.accessibility-mode .card .title {
+    font-size: 1.75rem;
 }
 
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+.accessibility-mode .card .desc {
+    font-size: 1.125rem;
+}
+
+.accessibility-mode .action {
+    font-size: 1rem;
 }
 
 @media (max-width: 767px) {
     .cards {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .card {
+        flex: none;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
     }
 }
 
