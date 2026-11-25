@@ -49,13 +49,15 @@ header {
     }
 
 nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     padding: 22px;
     }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin-right: 15px;
     font-weight: bold;
     font-size: 1.2rem;
     }
@@ -318,6 +320,12 @@ textarea {
     font-size: 20px;
     cursor: pointer;
     margin-top: auto;
+    transition: background-color 200ms ease;
+    }
+
+.contact-form button[type="submit"]:hover,
+.contact-form button[type="submit"]:focus-visible {
+    background-color: #b93822;
     }
 
 a[href^="mailto:"] {
@@ -382,17 +390,11 @@ a[href^="mailto:"]:hover {
     margin: 10px 0;
   }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
+  nav { 
     justify-content: center;
     gap: 12px;
     padding: 12px 0;
-  }
-
-  nav a {
-    margin-right: 0;
-  }
+  } /*flexbox*/
 
   main {
     margin: 20px 0;
