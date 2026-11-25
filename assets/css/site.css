@@ -589,3 +589,11 @@ a[href^="mailto:"]:hover {
 .image img.miata-photo {
 	object-position: center 63%;
 }
+
+.article-photo {
+	margin: 1.25rem 0;
+}
+
+.article-photo img {
+	margin: 0 0 0.5rem;
+}
