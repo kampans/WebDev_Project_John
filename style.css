@@ -19,9 +19,8 @@ main details {
     width: fit-content;
 }
 
-.accessibility-mode main :where(h1, h2, p, details) {
-    border: 2px solid #333;
-    font-size: 1.5rem;
+.accessibility-mode main :where(p, details) {
+    font-size: 1.25rem;
 }
 
 body {
@@ -82,24 +81,40 @@ nav a:hover {
     }
 
 .accessibility-toggle {
-    margin-left: auto;
-    padding: 6px 12px;
-    border: 1px solid #fff;
-    border-radius: 5px;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid #ffb4a5;
+    border-radius: 0.25rem;
     background: transparent;
     color: #fff;
     font: inherit;
+    font-weight: 700;
     cursor: pointer;
 }
 
-.accessibility-toggle[aria-pressed="true"] {
-    background: #fff;
-    color: #333;
+.accessibility-toggle:hover {
+    background: #4d302b;
 }
 
-.accessibility-toggle:focus-visible {
-    outline: 2px solid #fff;
+.accessibility-toggle[aria-pressed="true"] {
+    border-color: #fce8e3;
+    background: #fce8e3;
+    color: #8e2415;
+}
+
+.accessibility-toggle:focus-visible,
+.accessibility-mode :is(a, button, summary, input, textarea):focus-visible {
+    outline: 3px solid #8e2415;
     outline-offset: 3px;
+    box-shadow: 0 0 0 3px #fff;
+}
+
+.accessibility-mode :is(nav a, .card, .action, .action span, .cardlink a) {
+    transition: none;
+}
+
+.accessibility-mode :is(nav a, .card, .action, .action span, .cardlink a):hover {
+    animation: none;
+    transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -437,9 +452,13 @@ footer {
     font-size: clamp(2rem, 5vw, 3rem);
 }
 
-.accessibility-mode .hero :is(h1, p) {
-    border-color: currentColor;
-    padding: 0.25em;
+.accessibility-mode .hero {
+    background-image: linear-gradient(rgba(10, 14, 20, 0.86), rgba(10, 14, 20, 0.86)),
+        url('images/background.jpg');
+}
+
+.accessibility-mode .hero-button {
+    font-size: 1.125rem;
 }
 
 .accessibility-mode .hero p {
@@ -592,6 +611,10 @@ footer {
     border: 2px solid #333;
 }
 
+.accessibility-mode .topic {
+    font-size: 1rem;
+}
+
 .accessibility-mode .card .title {
     font-size: 1.75rem;
 }
@@ -601,7 +624,22 @@ footer {
 }
 
 .accessibility-mode .action {
-    font-size: 1rem;
+    background-color: #bd3420;
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+.accessibility-mode .contact-form :is(input, textarea),
+.accessibility-mode .accessibility-toggle {
+    font-size: 1.125rem;
+}
+
+.accessibility-mode .contact-form button[type="submit"] {
+    background-color: #bd3420;
+}
+
+.accessibility-mode :is(.action, .contact-form button[type="submit"]):hover {
+    background-color: #9f2818;
 }
 
 @media (max-width: 767px) {
