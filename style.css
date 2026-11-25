@@ -65,7 +65,7 @@ nav {
     flex: 1;
     flex-wrap: wrap;
     align-items: center;
-    gap: 15px;
+    gap: 0.75rem 1.5rem;
     }
 
 nav a {
@@ -339,7 +339,7 @@ nav {
     display: flex; 
     width: 100%;
     justify-content: center; 
-    gap: 12px; 
+    gap: 0.75rem 1rem;
     padding: 6px 0;
 } /*flexbox*/
 
